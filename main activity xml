@@ -1,0 +1,32 @@
+main activity xml
+
+package com.example.my
+
+import android.os.Bundle
+import android.view.View
+import android.widget.TextView
+import android.widget.ToggleButton
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val toggleButton = findViewById<ToggleButton>(R.id.toggleButton)
+        val textView = findViewById<TextView>(R.id.textViewMessage)
+
+        toggleButton.setOnCheckedChangeListener { _, isChecked ->
+
+            if (isChecked) {
+                textView.visibility = View.VISIBLE
+            } else {
+                textView.visibility = View.GONE
+            }
+
+        }
+    }
+}
+
+
